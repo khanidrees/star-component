@@ -9,9 +9,7 @@ const StarComponent = ({ starCount = 5 }) => {
         return (
           <span
             key={index.toString()}
-            className={
-              (hover == 0 && index < rating) || index < hover ? "golden" : ""
-            }
+            className={index < (hover || rating) ? "golden" : ""}
             onClick={(e) => {
               setRating(index + 1);
             }}
